@@ -32,7 +32,7 @@ namespace Eridanus.SpaceSystems
             }
         }
 
-        public override float getOrientation(Vector2 pos)
+        public override float getOrientation(Vector2 pos)   //returns direction craft should be facing
         {
             return theta;
         }

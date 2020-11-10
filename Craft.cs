@@ -35,6 +35,7 @@ namespace Eridanus.SpaceSystems
         {
             this.initialize();
             type = new ShipClass();
+            type.constructShip();
             loc = l;
             curSystem = sys;
             speed = s;
@@ -57,7 +58,7 @@ namespace Eridanus.SpaceSystems
 
         public void hyperTravel() { }
 
-        //combat destruction
+        //combat destruction or scrapping?
         public void destroy()
         {
             //explosion animation on position relative to scale

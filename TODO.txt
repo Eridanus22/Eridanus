@@ -1,0 +1,25 @@
+﻿Basic ships
+Order system
+
+System Gen
+compute image scale based on mass, size
+
+Ship components
+
+database saving/loading
+load sol systems via XML or similar
+
+shipyards
+
+Missiles
+Ship explode animation on destruction
+
+races/factions/empires
+Planet surfaces, production
+
+Officers, training
+Ground warfare
+
+Governments
+
+Multi monitor support

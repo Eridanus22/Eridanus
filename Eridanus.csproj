@@ -85,7 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrayQueue.cs" />
+    <Compile Include="ArrayOrders.cs" />
     <Compile Include="Body.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Colony.cs" />
@@ -118,6 +118,12 @@
     <Compile Include="GameWait.cs" />
     <Compile Include="GasPlanet.cs" />
     <Compile Include="InputHandler.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MilitaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MilitaryForm.resx">
       <DependentUpon>MilitaryForm.cs</DependentUpon>
@@ -205,6 +214,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\forward.png" />
+    <EmbeddedResource Include="Resources\ElectroShackle-Yrvy.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="Resources\forward1.png" />
     <None Include="Resources\Race Window.png" />
     <None Include="Resources\Sector View.png" />

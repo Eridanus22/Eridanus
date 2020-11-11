@@ -52,5 +52,4 @@ C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\Eridanus.csprojAssemblyRe
 C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\EridanusA.OfficerForm.resources
 C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\EridanusA.ColonyView.resources
 C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\EridanusA.FleetOrders.resources
-C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Resources\ElectroShackle-Yrvy.ttf
 C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\EridanusA.MainMenu.resources

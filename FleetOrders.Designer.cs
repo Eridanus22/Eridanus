@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("1st SpaceLift Task Force");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Transportation Command", new System.Windows.Forms.TreeNode[] {
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("The United Commonwealth Navy", new System.Windows.Forms.TreeNode[] {
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Mercury");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Venus");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Luna");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Earth", new System.Windows.Forms.TreeNode[] {
-            treeNode19});
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Phobos");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Mars", new System.Windows.Forms.TreeNode[] {
-            treeNode21});
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Asteroids");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Sol", new System.Windows.Forms.TreeNode[] {
-            treeNode17,
-            treeNode18,
-            treeNode20,
-            treeNode22,
-            treeNode23});
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Yavin");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Alpha Centauri", new System.Windows.Forms.TreeNode[] {
-            treeNode25});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("1st SpaceLift Task Force");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Transportation Command", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("The United Commonwealth Navy", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Mercury");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Venus");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Luna");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Earth", new System.Windows.Forms.TreeNode[] {
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Phobos");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Mars", new System.Windows.Forms.TreeNode[] {
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Asteroids");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Sol", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5,
+            treeNode7,
+            treeNode9,
+            treeNode10});
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Yavin");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Alpha Centauri", new System.Windows.Forms.TreeNode[] {
+            treeNode12});
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -89,12 +89,12 @@
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,14 +108,14 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(1, 41);
             this.treeView1.Name = "treeView1";
-            treeNode14.Name = "Node3";
-            treeNode14.Text = "1st SpaceLift Task Force";
-            treeNode15.Name = "Node2";
-            treeNode15.Text = "Transportation Command";
-            treeNode16.Name = "Node0";
-            treeNode16.Text = "The United Commonwealth Navy";
+            treeNode1.Name = "Node3";
+            treeNode1.Text = "1st SpaceLift Task Force";
+            treeNode2.Name = "Node2";
+            treeNode2.Text = "Transportation Command";
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "The United Commonwealth Navy";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode16});
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(466, 940);
             this.treeView1.TabIndex = 0;
             // 
@@ -508,29 +508,29 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView2.Location = new System.Drawing.Point(4, 10);
             this.treeView2.Name = "treeView2";
-            treeNode17.Name = "Node1";
-            treeNode17.Text = "Mercury";
-            treeNode18.Name = "Node3";
-            treeNode18.Text = "Venus";
-            treeNode19.Name = "Node9";
-            treeNode19.Text = "Luna";
-            treeNode20.Name = "Node4";
-            treeNode20.Text = "Earth";
-            treeNode21.Name = "Node8";
-            treeNode21.Text = "Phobos";
-            treeNode22.Name = "Node7";
-            treeNode22.Text = "Mars";
-            treeNode23.Name = "Node12";
-            treeNode23.Text = "Asteroids";
-            treeNode24.Name = "Node0";
-            treeNode24.Text = "Sol";
-            treeNode25.Name = "Node11";
-            treeNode25.Text = "Yavin";
-            treeNode26.Name = "Node10";
-            treeNode26.Text = "Alpha Centauri";
+            treeNode4.Name = "Node1";
+            treeNode4.Text = "Mercury";
+            treeNode5.Name = "Node3";
+            treeNode5.Text = "Venus";
+            treeNode6.Name = "Node9";
+            treeNode6.Text = "Luna";
+            treeNode7.Name = "Node4";
+            treeNode7.Text = "Earth";
+            treeNode8.Name = "Node8";
+            treeNode8.Text = "Phobos";
+            treeNode9.Name = "Node7";
+            treeNode9.Text = "Mars";
+            treeNode10.Name = "Node12";
+            treeNode10.Text = "Asteroids";
+            treeNode11.Name = "Node0";
+            treeNode11.Text = "Sol";
+            treeNode12.Name = "Node11";
+            treeNode12.Text = "Yavin";
+            treeNode13.Name = "Node10";
+            treeNode13.Text = "Alpha Centauri";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode26});
+            treeNode11,
+            treeNode13});
             this.treeView2.Size = new System.Drawing.Size(351, 709);
             this.treeView2.TabIndex = 2;
             // 
@@ -552,6 +552,15 @@
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Cargo";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 20;
+            this.listBox3.Location = new System.Drawing.Point(4, 14);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(1177, 704);
+            this.listBox3.TabIndex = 0;
             // 
             // tabPage7
             // 
@@ -597,15 +606,6 @@
             this.comboBox1.Size = new System.Drawing.Size(466, 28);
             this.comboBox1.TabIndex = 5;
             // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(4, 14);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(1177, 704);
-            this.listBox3.TabIndex = 0;
-            // 
             // FleetOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -620,6 +620,7 @@
             this.Controls.Add(this.treeView1);
             this.Name = "FleetOrders";
             this.Text = "Fleet Orders";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FleetOrders_Load);
             this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

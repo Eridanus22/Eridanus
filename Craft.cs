@@ -25,6 +25,7 @@ namespace Eridanus.SpaceSystems
         //orders, task group, element, fleet
         public ArrayOrders orders;  //queue, queuelist?
         //health/armor/shields
+        //1D array for armor ex[17, 5] use ints for armor value
 
         //default constructor
         public Craft() {

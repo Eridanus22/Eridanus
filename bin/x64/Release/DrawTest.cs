@@ -152,11 +152,19 @@ namespace Eridanus
 
             if (curSystem > -1)
             {
-                //if(settings.drawOrbits()){}
-
-
                 Body temp;
                 Craft temp2;
+
+                if (Settings.drawOrbits){
+                    /*
+                   for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
+                    {
+                        temp = Galaxy.solSystems[curSystem].bodies[j];
+                        Editor.spriteBatch.Draw(circleSprite, Vector2.Zero, origin: new Vector2(circleSprite.Width / 2, circleSprite.Height / 2), scale: temp.radius);
+                    }
+                    */
+                }
+               
 
                 for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                 {

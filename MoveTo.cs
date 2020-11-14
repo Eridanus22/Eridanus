@@ -30,6 +30,7 @@ namespace Eridanus.SpaceSystems
                 //advance to next order
                 craft.orders.next(craft);
             }
+            //craft.getBox();
         }
 
         public override float getOrientation(Vector2 pos)   //returns direction craft should be facing

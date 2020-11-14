@@ -29,7 +29,7 @@ namespace Eridanus
             FileStream fileStream = new FileStream("Content/sprites/frigateClass1a.png", FileMode.Open);
             sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
             fileStream.Dispose();
-            scale = new Vector2(1, 1);
+            scale = new Vector2(2, 2);
         }
 
         public void constructShip()

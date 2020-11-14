@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Eridanus.SpaceSystems
 {
-    public class Craft
+    public class Craft : BaseObj
     {
-        private static uint nextId = 0; //queue for destroyed/removed ships ids to be reused
-        public Vector2 loc; //coordinates of body within system
-        public uint id;
         public string name;     //name of ship
         public uint hullNum;    //number of class built
         public float speed; // current velocity
@@ -19,13 +16,14 @@ namespace Eridanus.SpaceSystems
         public ShipClass type;
         public uint empireID;
         public int curSystem;
+        public Rectangle box;
         //cargo onboard
         //fuel
         //crew, command
         //orders, task group, element, fleet
         public ArrayOrders orders;  //queue, queuelist?
         //health/armor/shields
-        //1D array for armor ex[17, 5] use ints for armor value
+        public int[] armor; //each armor tile stores an int of armor ex armor[5] = 17
 
         //default constructor
         public Craft() {
@@ -36,6 +34,7 @@ namespace Eridanus.SpaceSystems
         {
             this.initialize();
             type = new ShipClass();
+            //armor = type.armor;
             type.constructShip();
             loc = l;
             curSystem = sys;
@@ -44,8 +43,7 @@ namespace Eridanus.SpaceSystems
 
         public void initialize()
         {
-            this.id = nextId;
-            nextId++;
+            base.initialize();
         }
 
         public void update()
@@ -64,6 +62,13 @@ namespace Eridanus.SpaceSystems
         {
             //explosion animation on position relative to scale
             Galaxy.crafts.Remove(this);
+        }
+
+        public void getBox()
+        {
+            //craft rotates, PSA
+
+            //box = new Rectangle((int)(loc.X - ), (int)(loc.Y- ), (int), (int));
         }
 
     }

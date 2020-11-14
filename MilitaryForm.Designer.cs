@@ -142,6 +142,7 @@
             this.Controls.Add(this.milTabControl);
             this.Name = "MilitaryForm";
             this.Text = "Military";
+            this.TopMost = true;
             this.milTabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

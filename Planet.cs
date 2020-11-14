@@ -17,13 +17,13 @@ namespace Eridanus.SpaceSystems
 
         public Planet() { }
 
-        public Planet(String img, Vector2 size, Vector2 l)
+        public Planet(String img, double rad, Vector2 l)
         {
             imgfile = img;
             FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
             sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
             fileStream.Dispose();
-            scale = size;
+            radius = rad;
             loc = l;
             theta = 0;
             orbitDist = ((loc.X * loc.X) + (loc.Y * loc.Y));
@@ -33,6 +33,10 @@ namespace Eridanus.SpaceSystems
 
         public override void simulateOrbit()
         {
+            //hypotenuse/radius = orbitDist
+            theta = (theta + radians) % (2 * Math.PI);
+            loc.X = (orbitDist * (float)Math.Cos(theta));
+            loc.Y = (orbitDist * (float)Math.Sin(theta));
             base.simulateOrbit();
         }
     }

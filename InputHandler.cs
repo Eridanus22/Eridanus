@@ -86,13 +86,13 @@ namespace Eridanus
 
                 if (currentMouseWheelValue > previousMouseWheelValue)
                 {
-                    game.camera.AdjustZoom(.005f);
+                    game.camera.AdjustZoom(1);
 
                 }
 
                 if (currentMouseWheelValue < previousMouseWheelValue)
                 {
-                    game.camera.AdjustZoom(-.005f);
+                    game.camera.AdjustZoom(-1);
                 }
                 game.camera.MoveCamera(cameraMovement);
 

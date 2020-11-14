@@ -13,7 +13,8 @@ namespace Eridanus
         static bool music;
         static bool graphics;
         static bool pause;
-        public static bool drawOrbits;
+        public static bool drawOrbits=true;
+        public static bool simAsteroidOrbits = false;
         static uint maxframes;
 
         public Settings() {

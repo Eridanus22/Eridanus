@@ -10,22 +10,19 @@ using System.Windows.Forms;
 
 namespace Eridanus.SpaceSystems
 {
-    public class Body
-    {
-        private static uint nextId = 0;
-        public Vector2 loc; //coordinates of body within system
-        public uint id;
+    public class Body : BaseObj
+    { 
         public string name;     //name of body, Ex. Earth
         public string imgfile;  //image to be used
-        public ulong mass;   //mass in kg
-        public uint radius;  //radius in km
+        public double mass;   //mass in metric tons
+        public double radius;  //radius in km
         public uint temp;   //temp in kelvin
-        public float orbitDist; //distance in km
+        public float orbitDist; //distance in 10km 
         public float radians;     //movement in radians relative to the sun per minute
         public double theta;
         public Texture2D sprite;
-        public Vector2 scale;
-        public uint curSystem;
+        public Rectangle box;
+        //public uint curSystem;
 
         //default constructor
         public Body() {
@@ -33,15 +30,14 @@ namespace Eridanus.SpaceSystems
             FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
             sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
             fileStream.Dispose();
-            scale = new Vector2(0.5f, 0.5f);
         }
-        public Body(String img, Vector2 size, Vector2 l)
+        public Body(String img, double rad, Vector2 l)
         {
             imgfile = img;
             FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
             sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
             fileStream.Dispose();
-            scale = size;
+            radius = rad;
             loc = l;
             theta = 0;
             orbitDist = ((loc.X*loc.X) + (loc.Y*loc.Y));
@@ -50,8 +46,8 @@ namespace Eridanus.SpaceSystems
         }
 
         public void initialize() {
-            this.id = nextId;
-            nextId++;
+            this.getBox();
+            base.initialize();
         }
 
         public void renameBody(string n)
@@ -59,13 +55,7 @@ namespace Eridanus.SpaceSystems
             name = n;
         }
 
-        public virtual void simulateOrbit()
-        {
-            //hypotenuse/radius = orbitDist
-            theta = (theta + radians) % (2*Math.PI);
-            loc.X = (orbitDist * (float)Math.Cos(theta));
-            loc.Y = (orbitDist * (float)Math.Sin(theta));
-        }
+        public virtual void simulateOrbit(){ this.getBox();  }
 
         public virtual uint getHabitability()
         {
@@ -82,6 +72,16 @@ namespace Eridanus.SpaceSystems
         {
             orbitDist = ((loc.X * loc.X) + (loc.Y * loc.Y));
             orbitDist = (float)Math.Sqrt(orbitDist);
+        }
+
+        public virtual Vector2 getOrbitCenter()
+        {
+            return Vector2.Zero;
+        }
+
+        public void getBox()
+        {
+            box = new Rectangle((int)(loc.X-(radius/2000)),(int)(loc.Y-(radius/2000)), (int)(radius/1000), (int)(radius / 1000));
         }
     }
 }

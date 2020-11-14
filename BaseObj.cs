@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,5 +32,7 @@ namespace Eridanus
         {
             loc = p;
         }
+
+        public virtual Rectangle hitbox() { return Rectangle.Empty; }
     }
 }

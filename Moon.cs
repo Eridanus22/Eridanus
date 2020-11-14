@@ -12,16 +12,15 @@ namespace Eridanus.SpaceSystems
     class Moon : SurfacePlanet
     {
         public Body parent;
-        //public rotation relative to parent
 
-        public Moon(String img, Vector2 size, Vector2 l, Body p)
+        public Moon(String img, double rad, Vector2 l, Body p)
         {
             imgfile = img;
             parent = p;
             FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
             sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
             fileStream.Dispose();
-            scale = size;
+            radius = rad;
             theta = 0;
             orbitDist = ((l.X * l.X) + (l.Y * l.Y));
             orbitDist = (float)Math.Sqrt(orbitDist);
@@ -41,6 +40,12 @@ namespace Eridanus.SpaceSystems
               */
             loc.X += parent.loc.X;
             loc.Y += parent.loc.Y;
+            this.getBox();
+        }
+
+        public override Vector2 getOrbitCenter()
+        {
+            return parent.getOrbitCenter();
         }
     }
 }

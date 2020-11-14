@@ -19,13 +19,13 @@ namespace Eridanus.SpaceSystems
 
         public SurfacePlanet() { }
 
-        public SurfacePlanet(String img, Vector2 size, Vector2 l)
+        public SurfacePlanet(String img, double rad, Vector2 l)
         {
             imgfile = img;
             FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
             sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
             fileStream.Dispose();
-            scale = size;
+            radius = rad;
             loc = l;
             theta = 0;
             orbitDist = ((loc.X * loc.X) + (loc.Y * loc.Y));

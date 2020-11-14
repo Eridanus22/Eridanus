@@ -24,16 +24,26 @@ namespace Eridanus
         Vector2 prevClick;
         MouseState prevState, mouseState;
         KeyboardState state;
+
+        //UI
+        Texture2D hitbox;
+        Texture2D orbit;
+        BaseObj selected;
+
         protected override void Initialize()
         {
             graphicsDevice = GraphicsDevice;
             base.Initialize();
             FileStream fileStream = new FileStream("Resources/spaceback.png", FileMode.Open);
             background = Texture2D.FromStream(this.GraphicsDevice, fileStream);
+            fileStream = new FileStream("Resources/circle.png", FileMode.Open);
+            orbit = Texture2D.FromStream(this.GraphicsDevice, fileStream);
             fileStream.Dispose();
+            //orbit.SetData(new[] { Color.Green });
+            
             camera = new Camera(GraphicsDevice.Viewport);
             Galaxy.load();
-
+            selected = null;
             Thread g = new Thread(GameRun.run);
             g.Start();
         }
@@ -59,6 +69,7 @@ namespace Eridanus
             if (mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
                 Vector2 click = new Vector2(mouseState.X, mouseState.Y);
+                selected = null;
                 if (click.Y > 60)   //ignore Top of screen
                 {
                     if (prevState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
@@ -67,23 +78,44 @@ namespace Eridanus
                         cameraMovement = (prevClick - click) * (float)(moveSpeed * .05);
 
                     }
+
+                    //check where the click was, for units, planets
+                    Vector2 point = camera.ScreenToPoint(click); //use zoom as +/- margin when searching
+                    Console.WriteLine(point.X + " : " + point.Y);
+                    if (curSystem > -1)
+                    {
+                        Body temp;
+                        Craft temp2;
+                        Boolean objSelected = false;
+                        //check current system
+                        for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //check all planets in current system
+                        {
+                            temp = Galaxy.solSystems[curSystem].bodies[j];
+                            if (temp.box.Contains(point))   //mouse click is within sprite
+                            {
+                                Console.WriteLine("OBJ: " +temp.id);
+                                selected = temp;
+                                objSelected = true;
+                                break;
+                            }
+                        }
+                        if (objSelected == false)
+                        {
+                            for (int j = 0; j < Galaxy.solSystems[curSystem].crafts.Count; j++) //check all crafts in current system
+                            {
+                                temp2 = Galaxy.crafts[Galaxy.solSystems[curSystem].crafts[j]];
+                                //(temp2.type.sprite, temp2.loc, rotation: temp2.orientation, origin: new Vector2(temp2.type.sprite.Width / 2, temp2.type.sprite.Height / 2), scale: temp2.type.scale);
+
+                            }
+                        }
+
+                    }
                     else
                     {
-                        //check where the click was, for units, planets
-                        Vector2 point = camera.ScreenToPoint(click); //use zoom as +/- margin when searching
-                        if (curSystem > -1)
-                        {
-                            //check current system
+                        //check galactic map
 
-                            
-
-                        }
-                        else
-                        {
-                            //check galactic map
-
-                        }
                     }
+
                     prevClick = click;
                 }
             }
@@ -121,18 +153,24 @@ namespace Eridanus
                 camera.Position = Vector2.Zero;
             }
 
+            if (Keyboard.GetState().IsKeyDown(Keys.G))
+            {
+                camera.Zoom = .0005f;
+                camera.AdjustZoom(-1);
+            }
+
             previousMouseWheelValue = currentMouseWheelValue;
             currentMouseWheelValue = Mouse.GetState().ScrollWheelValue;
 
             if (currentMouseWheelValue > previousMouseWheelValue)
             {
-                camera.AdjustZoom(.005f);
+                camera.AdjustZoom(+1);
 
             }
 
             if (currentMouseWheelValue < previousMouseWheelValue)
             {
-                camera.AdjustZoom(-.005f);
+                camera.AdjustZoom(-1);
             }
             camera.MoveCamera(cameraMovement);
 
@@ -155,27 +193,31 @@ namespace Eridanus
                 Body temp;
                 Craft temp2;
 
-                if (Settings.drawOrbits){
-                    /*
-                   for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
+
+                if (Settings.drawOrbits)
+                {
+
+                    for (int j = 1; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                     {
                         temp = Galaxy.solSystems[curSystem].bodies[j];
-                        Editor.spriteBatch.Draw(circleSprite, Vector2.Zero, origin: new Vector2(circleSprite.Width / 2, circleSprite.Height / 2), scale: temp.radius);
+                        Editor.spriteBatch.Draw(orbit, new Rectangle((int)-temp.orbitDist,(int)-temp.orbitDist, (int)temp.orbitDist * 2,(int)temp.orbitDist * 2), Color.Cyan);
                     }
-                    */
+
                 }
-               
 
                 for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                 {
                     temp = Galaxy.solSystems[curSystem].bodies[j];
-                    Editor.spriteBatch.Draw(temp.sprite, temp.loc, origin: new Vector2(temp.sprite.Width / 2, temp.sprite.Height / 2), scale: temp.scale);
+                    //Editor.spriteBatch.Draw(temp.sprite, temp.loc, origin: new Vector2(temp.sprite.Width / 2, temp.sprite.Height / 2), scale: temp.scale);
+                    Editor.spriteBatch.Draw(temp.sprite, destinationRectangle: temp.box);
                 }
                 for (int j = 0; j < Galaxy.solSystems[curSystem].crafts.Count; j++) //draw all crafts in current system
                 {
                     temp2 = Galaxy.crafts[Galaxy.solSystems[curSystem].crafts[j]];
                     Editor.spriteBatch.Draw(temp2.type.sprite, temp2.loc, rotation: temp2.orientation, origin: new Vector2(temp2.type.sprite.Width / 2, temp2.type.sprite.Height / 2), scale: temp2.type.scale);
                 }
+
+
 
             }
             else
@@ -184,7 +226,7 @@ namespace Eridanus
                 for (int i = 0; i < Galaxy.solSystems.Count; i++)
                 {
                     //draws just the sun from each system
-                    Editor.spriteBatch.Draw(Galaxy.solSystems[i].bodies[0].sprite, Galaxy.solSystems[i].loc, origin: new Vector2(Galaxy.solSystems[i].bodies[0].sprite.Width / 2, Galaxy.solSystems[i].bodies[0].sprite.Height / 2), scale: Galaxy.solSystems[i].bodies[0].scale);
+                    Editor.spriteBatch.Draw(Galaxy.solSystems[i].bodies[0].sprite, destinationRectangle: Galaxy.solSystems[i].box);
                 }
                 /*
                 for (int i = 0; i < galaxy.crafts.Count; i++)

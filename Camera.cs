@@ -57,23 +57,28 @@ namespace Eridanus
             Position = newPosition;
         }
 
-        public void AdjustZoom(float zoomAmount)
+        public void AdjustZoom(int num)
         {
-            Zoom += zoomAmount;
-            if (Zoom < .001f)
+
+            Zoom += (float)(num *(.05f*Zoom));
+            if (Zoom <= .0005f)
             {
-                //enter galactic view
-                DrawTest.curSystem = -1;
-                Zoom = .001f;
+                if(DrawTest.curSystem != -1)
+                {
+                    Position = Galaxy.solSystems[DrawTest.curSystem].loc;
+                    DrawTest.curSystem = -1;    //enter galactic view
+                }
+               
+                Zoom = .0005f;
             }
-            else if(Zoom > .001f && DrawTest.curSystem ==-1)
+            else if(Zoom > .0005f && DrawTest.curSystem ==-1)
             {
                 DrawTest.curSystem = this.closestSys();
                 Position = Vector2.Zero;
             }
-            if (Zoom > 5f)
+            if (Zoom > 20f)
             {
-                Zoom = 5f;
+                Zoom = 20f;
             }
 
             previousZoom = zoom;

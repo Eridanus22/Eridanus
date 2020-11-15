@@ -28,6 +28,17 @@ namespace Eridanus.SpaceSystems
             nextID++;
             this.initialize();
         }
+        public SolSystem(String n, Vector2 pos)
+        {
+            name = n;
+            nonAstNum = 0;
+            loc = pos;
+            bodies = new List<Body>();
+            crafts = new List<int>();
+            solID = nextID;
+            nextID++;
+            this.initialize();
+        }
 
         public void initialize()
         {

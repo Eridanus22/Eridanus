@@ -16,7 +16,6 @@ namespace Eridanus.SpaceSystems
         public ShipClass type;
         public uint empireID;
         public int curSystem;
-        public Rectangle box;
         //cargo onboard
         //fuel
         //crew, command
@@ -64,11 +63,10 @@ namespace Eridanus.SpaceSystems
             Galaxy.crafts.Remove(this);
         }
 
-        public void getBox()
+        public Rectangle getBox()
         {
-            //craft rotates, PSA
 
-            //box = new Rectangle((int)(loc.X - ), (int)(loc.Y- ), (int), (int));
+            return new Rectangle((int)(loc.X - 100), (int)(loc.Y- 100), (int)200, (int)200);
         }
 
     }

@@ -88,25 +88,36 @@ namespace Eridanus
                         Craft temp2;
                         Boolean objSelected = false;
                         //check current system
-                        for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //check all planets in current system
+                        
+                        for (int j = 0; j < Galaxy.solSystems[curSystem].crafts.Count; j++) //check all crafts in current system
                         {
-                            temp = Galaxy.solSystems[curSystem].bodies[j];
-                            if (temp.box.Contains(point))   //mouse click is within sprite
+                            temp2 = Galaxy.crafts[Galaxy.solSystems[curSystem].crafts[j]];
+                            if (temp2.getBox().Contains(point))
                             {
-                                Console.WriteLine("OBJ: " +temp.id);
-                                selected = temp;
+                                Console.WriteLine("OBJ: " + temp2.id);
+                                selected = temp2;
                                 objSelected = true;
                                 break;
+                            }
+
+                        }
+                        if (objSelected == false)
+                        {
+                            for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //check all planets in current system
+                            {
+                                temp = Galaxy.solSystems[curSystem].bodies[j];
+                                if (temp.box.Contains(point))   //mouse click is within sprite
+                                {
+                                    Console.WriteLine("OBJ: " + temp.id);
+                                    selected = temp;
+                                    objSelected = true;
+                                    break;
+                                }
                             }
                         }
                         if (objSelected == false)
                         {
-                            for (int j = 0; j < Galaxy.solSystems[curSystem].crafts.Count; j++) //check all crafts in current system
-                            {
-                                temp2 = Galaxy.crafts[Galaxy.solSystems[curSystem].crafts[j]];
-                                //(temp2.type.sprite, temp2.loc, rotation: temp2.orientation, origin: new Vector2(temp2.type.sprite.Width / 2, temp2.type.sprite.Height / 2), scale: temp2.type.scale);
-
-                            }
+                            selected = null;
                         }
 
                     }

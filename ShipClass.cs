@@ -29,7 +29,7 @@ namespace Eridanus
             FileStream fileStream = new FileStream("Content/sprites/frigateClass1a.png", FileMode.Open);
             sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
             fileStream.Dispose();
-            scale = new Vector2(2, 2);
+            this.calcScale();
         }
 
         public void constructShip()
@@ -38,7 +38,10 @@ namespace Eridanus
 
         }
   
-
+        public void calcScale() {
+            float s = (250 / sprite.Width);
+            scale = new Vector2(s, s);
+        }
 
 
     }

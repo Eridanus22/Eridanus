@@ -13,31 +13,28 @@ namespace Eridanus.SpaceSystems
     {
         public Body parent;
 
-        public Moon(String img, double rad, Vector2 l, Body p)
+        public Moon(string n, string img, double m, double r, float od, double t, float yrLen, float dayLen, Body b)
         {
+            name = n;
             imgfile = img;
-            parent = p;
-            FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
-            sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
-            fileStream.Dispose();
-            radius = rad;
-            theta = 0;
-            orbitDist = ((l.X * l.X) + (l.Y * l.Y));
-            orbitDist = (float)Math.Sqrt(orbitDist);
-
-            loc = new Vector2(parent.loc.X + l.X, parent.loc.Y + l.Y);
+            mass = m;
+            radius = r;
+            orbitDist = od;
+            theta = t;
+            yearLength = yrLen;
+            dayLength = dayLen;
+            parent = b;
+            this.readSprite();
+            loc = new Vector2(parent.loc.X + orbitDist, parent.loc.Y);
             base.initialize();
         }
 
         public override void simulateOrbit()
         {
             //update after parent
-            base.simulateOrbit();
-            /*
-             theta = (theta + radians) % (2 * Math.PI);
+            theta = (theta + radians) % (2 * Math.PI);
             loc.X = (orbitDist * (float)Math.Cos(theta));
             loc.Y = (orbitDist * (float)Math.Sin(theta));
-              */
             loc.X += parent.loc.X;
             loc.Y += parent.loc.Y;
             this.getBox();

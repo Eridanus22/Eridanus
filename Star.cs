@@ -16,7 +16,11 @@ namespace Eridanus.SpaceSystems
 		//public color value
 
 		//default constructor
-		public Star() { 
+		public Star(string n, string img, double m, double r) {
+			name = n;
+			imgfile = img;
+			mass = m;
+			radius = r;
 			radians = 0;
 			orbitDist = 0;
 		}

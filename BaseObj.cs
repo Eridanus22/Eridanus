@@ -12,7 +12,8 @@ namespace Eridanus
         private static uint nextId=0;
         public Vector2 loc; //coordinates of body within system
         public uint id;
-        
+        //public int curSystem;
+
         //default constructor
         public BaseObj() { }
 
@@ -20,17 +21,6 @@ namespace Eridanus
         {
             id = nextId;
             nextId++;
-        }
-
-        //return position
-        public Vector2 getPos()
-        {
-            return loc;
-        }
-
-        public void updatePos(Vector2 p)
-        {
-            loc = p;
         }
 
         public virtual Rectangle hitbox() { return Rectangle.Empty; }

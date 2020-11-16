@@ -202,6 +202,24 @@
     <Content Include="Content\Sprites\bluestar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Sprites\Sol\Callisto.png" />
+    <Content Include="Content\Sprites\Sol\Ceres.png" />
+    <Content Include="Content\Sprites\Sol\Earth.png" />
+    <Content Include="Content\Sprites\Sol\Europa.png" />
+    <Content Include="Content\Sprites\Sol\Ganymede.png" />
+    <Content Include="Content\Sprites\Sol\Io.jpg" />
+    <Content Include="Content\Sprites\Sol\Jupiter.png" />
+    <Content Include="Content\Sprites\Sol\Luna.png" />
+    <Content Include="Content\Sprites\Sol\Mars.png" />
+    <Content Include="Content\Sprites\Sol\Mercury.png" />
+    <Content Include="Content\Sprites\Sol\Neptune.png" />
+    <Content Include="Content\Sprites\Sol\Pluto.png" />
+    <Content Include="Content\Sprites\Sol\Saturn.png" />
+    <Content Include="Content\Sprites\Sol\Sol.png" />
+    <Content Include="Content\Sprites\Sol\Titan.png" />
+    <Content Include="Content\Sprites\Sol\Triton.png" />
+    <Content Include="Content\Sprites\Sol\Uranus.png" />
+    <Content Include="Content\Sprites\Sol\Venus.png" />
     <Content Include="Resources\circle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -228,40 +246,7 @@
     <Content Include="Resources\spaceBackground.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\Earth.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\Jupiter.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\Luna.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Sprites\Map-617.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\Mars.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\mercury.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\neptune.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\pluto.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\saturn.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\sol.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\uranus.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Sprites\venus.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />

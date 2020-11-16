@@ -13,17 +13,18 @@ namespace Eridanus.SpaceSystems
     {
         //resources (gas)
 
-        public GasPlanet(String img, double rad, Vector2 l)
+        public GasPlanet(string n, string img, double m, double r, float od, double t, float yrLen, float dayLen)
         {
+            name = n;
             imgfile = img;
-            FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
-            sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
-            fileStream.Dispose();
-            radius = rad;
-            loc = l;
-            theta = 0;
-            orbitDist = ((loc.X * loc.X) + (loc.Y * loc.Y));
-            orbitDist = (float)Math.Sqrt(orbitDist);
+            mass = m;
+            radius = r;
+            orbitDist = od;
+            theta = t;
+            yearLength = yrLen;
+            dayLength = dayLen;
+            this.readSprite();
+            loc = new Vector2(orbitDist, 0);
             base.initialize();
         }
     }

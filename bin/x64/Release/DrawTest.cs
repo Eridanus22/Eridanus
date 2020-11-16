@@ -28,7 +28,7 @@ namespace Eridanus
         //UI
         Texture2D hitbox;
         Texture2D orbit;
-        BaseObj selected;
+        BaseObj leftSelected, rightSelected;
 
         protected override void Initialize()
         {
@@ -43,7 +43,8 @@ namespace Eridanus
             
             camera = new Camera(GraphicsDevice.Viewport);
             Galaxy.load();
-            selected = null;
+            leftSelected = null;
+            rightSelected = null;
             Thread g = new Thread(GameRun.run);
             g.Start();
         }
@@ -69,7 +70,7 @@ namespace Eridanus
             if (mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
                 Vector2 click = new Vector2(mouseState.X, mouseState.Y);
-                selected = null;
+                leftSelected = null;
                 if (click.Y > 60)   //ignore Top of screen
                 {
                     if (prevState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
@@ -81,21 +82,19 @@ namespace Eridanus
 
                     //check where the click was, for units, planets
                     Vector2 point = camera.ScreenToPoint(click); //use zoom as +/- margin when searching
-                    Console.WriteLine(point.X + " : " + point.Y);
                     if (curSystem > -1)
                     {
                         Body temp;
                         Craft temp2;
                         Boolean objSelected = false;
+
                         //check current system
-                        
                         for (int j = 0; j < Galaxy.solSystems[curSystem].crafts.Count; j++) //check all crafts in current system
                         {
                             temp2 = Galaxy.crafts[Galaxy.solSystems[curSystem].crafts[j]];
                             if (temp2.getBox().Contains(point))
                             {
-                                Console.WriteLine("OBJ: " + temp2.id);
-                                selected = temp2;
+                                leftSelected = temp2;
                                 objSelected = true;
                                 break;
                             }
@@ -108,8 +107,7 @@ namespace Eridanus
                                 temp = Galaxy.solSystems[curSystem].bodies[j];
                                 if (temp.box.Contains(point))   //mouse click is within sprite
                                 {
-                                    Console.WriteLine("OBJ: " + temp.id);
-                                    selected = temp;
+                                    leftSelected = temp;
                                     objSelected = true;
                                     break;
                                 }
@@ -117,7 +115,8 @@ namespace Eridanus
                         }
                         if (objSelected == false)
                         {
-                            selected = null;
+                            leftSelected = null;
+                            rightSelected = null;
                         }
 
                     }
@@ -130,11 +129,55 @@ namespace Eridanus
                     prevClick = click;
                 }
             }
+
             //additonal options/command on unit
             if (mouseState.RightButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
                 Vector2 click = new Vector2(mouseState.X, mouseState.Y);
+                Vector2 point = camera.ScreenToPoint(click); //use zoom as +/- margin when searching
                 //check where the click was
+                if (curSystem > -1)
+                {
+                    Body temp;
+                    Craft temp2;
+                    Boolean objSelected = false;
+
+                    //check current system
+                    for (int j = 0; j < Galaxy.solSystems[curSystem].crafts.Count; j++) //check all crafts in current system
+                    {
+                        temp2 = Galaxy.crafts[Galaxy.solSystems[curSystem].crafts[j]];
+                        if (temp2.getBox().Contains(point))
+                        {
+                            rightSelected = temp2;
+                            objSelected = true;
+                            break;
+                        }
+
+                    }
+                    if (objSelected == false)
+                    {
+                        for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //check all planets in current system
+                        {
+                            temp = Galaxy.solSystems[curSystem].bodies[j];
+                            if (temp.box.Contains(point))   //mouse click is within sprite
+                            {
+                                rightSelected = temp;
+                                objSelected = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (objSelected == false)
+                    {
+                        rightSelected = null;
+                    }
+
+                }
+                else
+                {
+                    //check galactic map
+
+                }
             }
 
             prevState = mouseState;
@@ -211,7 +254,7 @@ namespace Eridanus
                     for (int j = 1; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                     {
                         temp = Galaxy.solSystems[curSystem].bodies[j];
-                        Editor.spriteBatch.Draw(orbit, new Rectangle((int)-temp.orbitDist,(int)-temp.orbitDist, (int)temp.orbitDist * 2,(int)temp.orbitDist * 2), Color.Cyan);
+                        Editor.spriteBatch.Draw(orbit, temp.getOrbitBox(), Color.Cyan);
                     }
 
                 }
@@ -228,7 +271,11 @@ namespace Eridanus
                     Editor.spriteBatch.Draw(temp2.type.sprite, temp2.loc, rotation: temp2.orientation, origin: new Vector2(temp2.type.sprite.Width / 2, temp2.type.sprite.Height / 2), scale: temp2.type.scale);
                 }
 
+                if (leftSelected != null)
+                {
+                    //draw outline around selected object
 
+                }
 
             }
             else
@@ -247,6 +294,21 @@ namespace Eridanus
                 }
                 */
 
+            }
+
+            
+            if (rightSelected != null)
+            {
+                if (leftSelected != null)
+                {
+                    //draw orders menu
+
+                }
+                else
+                {
+                    //draw selected info/options menu
+                    //Editor.spriteBatch.Draw(rightSelected.menu(), rightSelected.box());
+                }
             }
 
             Editor.spriteBatch.End();

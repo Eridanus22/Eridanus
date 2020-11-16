@@ -254,7 +254,7 @@ namespace Eridanus
                     for (int j = 1; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                     {
                         temp = Galaxy.solSystems[curSystem].bodies[j];
-                        Editor.spriteBatch.Draw(orbit, new Rectangle((int)-temp.orbitDist,(int)-temp.orbitDist, (int)temp.orbitDist * 2,(int)temp.orbitDist * 2), Color.Cyan);
+                        Editor.spriteBatch.Draw(orbit, temp.getOrbitBox(), Color.Cyan);
                     }
 
                 }
@@ -307,7 +307,7 @@ namespace Eridanus
                 else
                 {
                     //draw selected info/options menu
-
+                    //Editor.spriteBatch.Draw(rightSelected.menu(), rightSelected.box());
                 }
             }
 

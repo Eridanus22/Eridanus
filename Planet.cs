@@ -11,25 +11,13 @@ namespace Eridanus.SpaceSystems
 {
     public class Planet : Body
     {
-        public ushort yearLength; //in earth days 
-        public ushort dayLength; //in hours (0=tidalLock)
+        public float yearLength; //in earth days 
+        public float dayLength; //in hours (0=tidalLock || day==year)
         //rings?
 
         public Planet() { }
 
-        public Planet(String img, double rad, Vector2 l)
-        {
-            imgfile = img;
-            FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
-            sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
-            fileStream.Dispose();
-            radius = rad;
-            loc = l;
-            theta = 0;
-            orbitDist = ((loc.X * loc.X) + (loc.Y * loc.Y));
-            orbitDist = (float)Math.Sqrt(orbitDist);
-            base.initialize();
-        }
+        public override Rectangle getOrbitBox() { return new Rectangle((int)-orbitDist, (int)-orbitDist, (int)orbitDist * 2, (int)orbitDist * 2); }
 
         public override void simulateOrbit()
         {

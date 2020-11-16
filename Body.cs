@@ -34,9 +34,7 @@ namespace Eridanus.SpaceSystems
         public Body(String img, double rad, Vector2 l)
         {
             imgfile = img;
-            FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
-            sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
-            fileStream.Dispose();
+            this.readSprite();
             radius = rad;
             loc = l;
             theta = 0;
@@ -50,16 +48,24 @@ namespace Eridanus.SpaceSystems
             base.initialize();
         }
 
-        public void renameBody(string n)
-        {
-            name = n;
-        }
-
         public virtual void simulateOrbit(){ this.getBox();  }
 
-        public virtual uint getHabitability()
+        public virtual Rectangle getOrbitBox() { return new Rectangle(0,0,0,0); }
+
+        public virtual void readSprite()
         {
-            return 0;
+            try
+            {
+                FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
+                sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
+                fileStream.Dispose();
+            }
+            catch (Exception) { //default image when stream errors
+                imgfile = "Map-617.png";
+                FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
+                sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
+                fileStream.Dispose();
+            }
         }
 
         public void calcRadians(double yrLength)

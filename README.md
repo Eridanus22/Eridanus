@@ -5,6 +5,11 @@ AUTHOR: TinkerPox
 Any questions check out our subreddit.
 Reddit: r/Eridanus4x
 
+Credits: 
+The MonoGame team (https://www.monogame.net/)
+Marcel Härtel, Sandbox Blizz for MonoGame Forms (https://github.com/sqrMin1/MonoGame.Forms)
+John McDonald and Gary Texmo for MonoGame Primitives2D (https://github.com/z2oh/C3.MonoGame.Primitives2D)
+
 Copyright (c) [2020] [TinkerPox]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

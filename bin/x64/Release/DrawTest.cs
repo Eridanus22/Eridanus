@@ -110,9 +110,14 @@ namespace Eridanus
                                 {
                                     Console.WriteLine("OBJ: " + temp.id);
                                     selected = temp;
+                                    objSelected = true;
                                     break;
                                 }
                             }
+                        }
+                        if (objSelected == false)
+                        {
+                            selected = null;
                         }
 
                     }

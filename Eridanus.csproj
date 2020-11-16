@@ -202,24 +202,63 @@
     <Content Include="Content\Sprites\bluestar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\Sol\Callisto.png" />
-    <Content Include="Content\Sprites\Sol\Ceres.png" />
-    <Content Include="Content\Sprites\Sol\Earth.png" />
-    <Content Include="Content\Sprites\Sol\Europa.png" />
-    <Content Include="Content\Sprites\Sol\Ganymede.png" />
-    <Content Include="Content\Sprites\Sol\Io.jpg" />
-    <Content Include="Content\Sprites\Sol\Jupiter.png" />
-    <Content Include="Content\Sprites\Sol\Luna.png" />
-    <Content Include="Content\Sprites\Sol\Mars.png" />
-    <Content Include="Content\Sprites\Sol\Mercury.png" />
-    <Content Include="Content\Sprites\Sol\Neptune.png" />
-    <Content Include="Content\Sprites\Sol\Pluto.png" />
-    <Content Include="Content\Sprites\Sol\Saturn.png" />
-    <Content Include="Content\Sprites\Sol\Sol.png" />
-    <Content Include="Content\Sprites\Sol\Titan.png" />
-    <Content Include="Content\Sprites\Sol\Triton.png" />
-    <Content Include="Content\Sprites\Sol\Uranus.png" />
-    <Content Include="Content\Sprites\Sol\Venus.png" />
+    <Content Include="Systems\Sol.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Callisto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Ceres.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Earth.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Europa.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Ganymede.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Io.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Jupiter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Luna.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Mars.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Mercury.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Neptune.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Pluto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Saturn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Sol.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Titan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Triton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Uranus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Systems\Sol\Venus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\circle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -25,23 +25,8 @@ namespace Eridanus.SpaceSystems
         //public uint curSystem;
 
         //default constructor
-        public Body() {
-            imgfile = "Map-617.png";
-            FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
-            sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
-            fileStream.Dispose();
-        }
-        public Body(String img, double rad, Vector2 l)
-        {
-            imgfile = img;
-            this.readSprite();
-            radius = rad;
-            loc = l;
-            theta = 0;
-            orbitDist = ((loc.X*loc.X) + (loc.Y*loc.Y));
-            orbitDist = (float)Math.Sqrt(orbitDist);
-            this.initialize();
-        }
+        public Body() {}
+
 
         public void initialize() {
             this.getBox();
@@ -56,7 +41,7 @@ namespace Eridanus.SpaceSystems
         {
             try
             {
-                FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
+                FileStream fileStream = new FileStream(imgfile, FileMode.Open);
                 sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
                 fileStream.Dispose();
             }
@@ -68,11 +53,7 @@ namespace Eridanus.SpaceSystems
             }
         }
 
-        public void calcRadians(double yrLength)
-        {
-            //yrLength is in Earth days
-            radians = (float)((2 * Math.PI) / (yrLength * 24));
-        }
+        public virtual void calcRadians() {}
 
         public void calcOrbit()
         {

@@ -19,15 +19,6 @@ namespace Eridanus.SpaceSystems
         public Vector2 loc; //location on galactic map
         public Rectangle box;
 
-        public SolSystem(Vector2 pos) {
-            nonAstNum = 0;
-            loc = pos;
-            bodies = new List<Body>();
-            crafts = new List<int>();
-            solID = nextID;
-            nextID++;
-            this.initialize();
-        }
         public SolSystem(String n, Vector2 pos)
         {
             name = n;

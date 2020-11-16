@@ -24,35 +24,11 @@ namespace Eridanus.SpaceSystems
 
         public static void load()
         {
-   
-            SolSystem test = new SolSystem(Vector2.Zero);
-            test.bodies.Add(new Body("sol.png", 695508, new Vector2(0, 0)));
-            test.bodies.Add(new SurfacePlanet("mercury.png", 2439, new Vector2(5790, 00)));
-            test.bodies.Add(new SurfacePlanet("venus.png", 6052, new Vector2(10820, 00)));
-            test.bodies.Add(new SurfacePlanet("Earth.png", 6371, new Vector2(14960, 0)));
-            test.bodies.Add(new SurfacePlanet("Mars.png", 6371, new Vector2(22790, 000)));
-            test.bodies.Add(new GasPlanet("Jupiter.png", 69911, new Vector2(77860, 00)));
-            test.bodies.Add(new GasPlanet("saturn.png", 58232, new Vector2(143350, 00)));
-            test.bodies.Add(new GasPlanet("uranus.png", 25362, new Vector2(287250, 00)));
-            test.bodies.Add(new GasPlanet("neptune.png", 24622, new Vector2(449510, 00)));
-            test.bodies.Add(new SurfacePlanet("pluto.png", 1188, new Vector2(590640, 00)));
-            test.bodies.Add(new Moon("Luna.png", 1738, new Vector2(38.44f, 00), test.bodies[3]));
+            readSystem("Sol.txt");
+    
+
+
             
-
-            test.bodies[1].radians = .000049583f * 60;
-            test.bodies[2].radians = .000019393f * 60;
-            test.bodies[3].radians = .000011954f * 60;
-            test.bodies[4].radians = .000006351f * 60;
-            test.bodies[5].radians = .000001008f * 60;
-            test.bodies[6].radians = .000024733f;
-            test.bodies[7].radians = .000008539f;
-            test.bodies[8].radians = .000004347f;
-            test.bodies[9].radians = .000002892f;
-            test.bodies[10].radians = .009696274f;
-            Galaxy.solSystems.Add(test);
-
-
-            //asteroid belt
             /*
             for(int i=0; i< 1000; i++)
             {
@@ -113,8 +89,7 @@ namespace Eridanus.SpaceSystems
 
         public static void readSystem(String fileName)
         {
-            
-            SolSystem s;
+           
             String line;
             String[] data;
             try
@@ -129,10 +104,11 @@ namespace Eridanus.SpaceSystems
             line = file.ReadLine(); //read in header
             line = file.ReadLine(); //read in system info
             data = line.Split('\t');
-            s = new SolSystem(data[1], readVect(data[2]));
+            SolSystem s = new SolSystem(data[1], readVect(data[6]));
             Body prevB =new Planet();   //empty
             while ((line = file.ReadLine()) != null)
             {
+                
                 data = line.Split('\t');   //info delimited by tabs
                 String name, imgfile;
                 Body b;
@@ -143,6 +119,7 @@ namespace Eridanus.SpaceSystems
                 imgfile = data[2];
                 try
                 {
+                    imgfile = System.IO.Path.GetFullPath(Directory.GetCurrentDirectory() + @"\Systems\" +s.name + @"\" + imgfile);
                     mass = Double.Parse(data[3]);
                     radius = Double.Parse(data[4]);
                     orbitDist = float.Parse(data[5]);
@@ -160,23 +137,26 @@ namespace Eridanus.SpaceSystems
                 else if (String.Equals(data[0], "surPlanet"))
                 {
                     b = new SurfacePlanet(name, imgfile, mass, radius, orbitDist, theta, yearLength, dayLength);
+                    b.calcRadians();
                     prevB = b;
                     s.nonAstNum++;
                 }
                 else if (String.Equals(data[0], "gasPlanet"))
                 {
                     b = new GasPlanet(name, imgfile, mass, radius, orbitDist, theta, yearLength, dayLength);
+                    b.calcRadians();
                     prevB = b;
                     s.nonAstNum++;
                 }
                 else if (String.Equals(data[0], "moon"))
                 {
                     b = new Moon(name, imgfile, mass, radius, orbitDist, theta, yearLength, dayLength, prevB);
+                    b.calcRadians();
                     s.nonAstNum++;
                 }
                 else if (String.Equals(data[0], "star"))
                 {
-                    b = new Star(name, imgfile, mass, radius);
+                    b = new Star(name, imgfile, mass, radius, pos);
                 }
                 else
                 {
@@ -194,6 +174,7 @@ namespace Eridanus.SpaceSystems
 
         public static Vector2 readVect(String v)
         {
+            v=v.Replace("\"", string.Empty);
             String[] x = v.Split(',');
             return new Vector2(float.Parse(x[0]), float.Parse(x[1]));
         }

@@ -1,0 +1,21 @@
+type	name	imgfile	mass (10^17) Mg	radius(km)	orbitDist	Pos	theta (starting pos)	yearLength	dayLength
+0	Sol	0	0	0	0	"0,0"	0	0	0
+star	Sol	Sol.png	19900000000	695508	0	"0,0"	0	0	0
+surPlanet	Mercury	Mercury.png	487800	2439	5790	"0,0"	0	87.6	1408
+surPlanet	Venus	Venus.png	1210200	6052	10820	"0,0"	0	225	-5832
+surPlanet	Earth	Earth.png	1275600	6371	14960	"0,0"	0	365	24
+moon	Luna	Luna.png	347600	1738	38.44	"0,0"	0	27	709
+surPlanet	Mars	Mars.png	678600	3390	22790	"0,0"	0	687	25
+gasPlanet	Jupiter	Jupiter.png	14298400	69911	77860	"0,0"	0	4329	10
+moon	Ganymede	Ganymede.png	148200	2631	107	"0,0"	0	7.155	171.72
+moon	Callisto	Callisto.png	107600	2410	188.3	"0,0"	0	16.689	400.536
+moon	Io	Io.png	89320	1822	42.2	"0,0"	0	1.769	42.456
+moon	Europa	Europa.png	48000	1561	67.1	"0,0"	0	3.551	85.224
+gasPlanet	Saturn	Saturn.png	12053600	58232	143350	"0,0"	0	10753	11
+moon	Titan	Titan.png	134500	2574	122.1	"0,0"	0	16	382
+gasPlanet	Uranus	Uranus.png	5111800	25362	287250	"0,0"	0	30663.65	-18
+gasPlanet	Neptune	Neptune.png	4952800	24622	449510	"0,0"	0	60148.35	19
+moon	Triton	Triton.png	21390	1353	35.48	"0,0"	0	5.875	141
+surPlanet	Pluto	Pluto.png	230000	1188	590640	"0,0"	0	90717.1	-153
+asteroid	Eris	Eris.png	16600	1163	1012500	"0,0"	0	558	25.9
+asteroid	Ceres	Ceres.png	939	450	41400	"0,0"	0	1682	9

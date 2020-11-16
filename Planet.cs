@@ -27,5 +27,11 @@ namespace Eridanus.SpaceSystems
             loc.Y = (orbitDist * (float)Math.Sin(theta));
             base.simulateOrbit();
         }
+
+        public override void calcRadians()
+        {
+            //yrLength is in Earth days
+            radians = (float)((2 * Math.PI) / (yearLength * 24));
+        }
     }
 }

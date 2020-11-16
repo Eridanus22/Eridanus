@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,16 @@ namespace Eridanus.SpaceSystems
 		//public color value
 
 		//default constructor
-		public Star(string n, string img, double m, double r) {
+		public Star(string n, string img, double m, double r, Vector2 p) {
 			name = n;
 			imgfile = img;
 			mass = m;
 			radius = r;
 			radians = 0;
 			orbitDist = 0;
+			loc = p;
+			this.readSprite();
+			base.initialize();
 		}
 
 		//creates a star from scratch

@@ -26,8 +26,6 @@ namespace Eridanus
         KeyboardState state;
 
         //UI
-        Texture2D hitbox;
-        Texture2D orbit;
         BaseObj leftSelected, rightSelected;
 
         protected override void Initialize()
@@ -36,8 +34,6 @@ namespace Eridanus
             base.Initialize();
             FileStream fileStream = new FileStream("Resources/spaceback.png", FileMode.Open);
             background = Texture2D.FromStream(this.GraphicsDevice, fileStream);
-            fileStream = new FileStream("Resources/circle.png", FileMode.Open);
-            orbit = Texture2D.FromStream(this.GraphicsDevice, fileStream);
             fileStream.Dispose();
             //orbit.SetData(new[] { Color.Green });
             

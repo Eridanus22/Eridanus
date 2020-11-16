@@ -42,7 +42,6 @@ C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\EridanusA.OfficerForm.res
 C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\EridanusA.ColonyView.resources
 C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\EridanusA.FleetOrders.resources
 C:\Users\m222904\source\repos\Eridanus\obj\x64\Release\EridanusA.MainMenu.resources
-C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Resources\circle.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Callisto.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Ceres.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Earth.png

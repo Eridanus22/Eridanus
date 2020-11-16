@@ -7,7 +7,7 @@ Reddit: r/Eridanus4x
 
 Credits: 
 The MonoGame team (https://www.monogame.net/)
-Marcel Härtel, Sandbox Blizz for MonoGame Forms (https://github.com/sqrMin1/MonoGame.Forms)
+Marcel Härtel and Sandbox Blizz for MonoGame Forms (https://github.com/sqrMin1/MonoGame.Forms)
 John McDonald and Gary Texmo for MonoGame Primitives2D (https://github.com/z2oh/C3.MonoGame.Primitives2D)
 
 Copyright (c) [2020] [TinkerPox]

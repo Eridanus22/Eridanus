@@ -42,7 +42,7 @@ namespace Eridanus.SpaceSystems
 
         public override Vector2 getOrbitCenter()
         {
-            return parent.getOrbitCenter();
+            return parent.loc;
         }
 
         public override Rectangle getOrbitBox() { return new Rectangle((int)(parent.loc.X-orbitDist), (int)(parent.loc.Y - orbitDist), (int)(2*orbitDist), (int)(2 * orbitDist)); }

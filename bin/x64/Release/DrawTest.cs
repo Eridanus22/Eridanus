@@ -254,15 +254,18 @@ namespace Eridanus
                     for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                     {
                         temp = Galaxy.solSystems[curSystem].bodies[j];
-                        Editor.spriteBatch.Draw(orbit, temp.getOrbitBox(), Color.Cyan);
+                        //Editor.spriteBatch.Draw(orbit, temp.getOrbitBox(), Color.Cyan);
+                        Primitives2D.DrawCircle(Editor.spriteBatch, temp.getOrbitCenter(), temp.orbitDist, 360, Color.Cyan, 1f/camera.Zoom);
                     }
+                    Editor.spriteBatch.End();
+                    Editor.spriteBatch.Begin(SpriteSortMode.Texture, BlendState.NonPremultiplied, null, null, null, null, camera.Transform);
 
                 }
 
                 if (leftSelected != null)
                 {
                     //draw outline around selected object
-                    //Editor.spriteBatch.Draw(outlineSprite, destinationRectangle: leftSelected.box);
+                    Primitives2D.DrawRectangle(Editor.spriteBatch, leftSelected.hitbox(), Color.Green, 1f / camera.Zoom);
                 }
 
                 for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system

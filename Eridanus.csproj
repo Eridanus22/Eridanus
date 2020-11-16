@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayOrders.cs" />
+    <Compile Include="Asteroid.cs" />
     <Compile Include="BaseObj.cs" />
     <Compile Include="Body.cs" />
     <Compile Include="Camera.cs" />

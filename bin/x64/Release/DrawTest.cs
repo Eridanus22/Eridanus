@@ -251,7 +251,7 @@ namespace Eridanus
                 if (Settings.drawOrbits)
                 {
 
-                    for (int j = 1; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
+                    for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                     {
                         temp = Galaxy.solSystems[curSystem].bodies[j];
                         Editor.spriteBatch.Draw(orbit, temp.getOrbitBox(), Color.Cyan);

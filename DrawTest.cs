@@ -251,7 +251,7 @@ namespace Eridanus
                 if (Settings.drawOrbits)
                 {
 
-                    for (int j = 1; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
+                    for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                     {
                         temp = Galaxy.solSystems[curSystem].bodies[j];
                         Editor.spriteBatch.Draw(orbit, temp.getOrbitBox(), Color.Cyan);
@@ -259,10 +259,15 @@ namespace Eridanus
 
                 }
 
+                if (leftSelected != null)
+                {
+                    //draw outline around selected object
+                    //Editor.spriteBatch.Draw(outlineSprite, destinationRectangle: leftSelected.box);
+                }
+
                 for (int j = 0; j < Galaxy.solSystems[curSystem].bodies.Count; j++) //draw all planets in current system
                 {
                     temp = Galaxy.solSystems[curSystem].bodies[j];
-                    //Editor.spriteBatch.Draw(temp.sprite, temp.loc, origin: new Vector2(temp.sprite.Width / 2, temp.sprite.Height / 2), scale: temp.scale);
                     Editor.spriteBatch.Draw(temp.sprite, destinationRectangle: temp.box);
                 }
                 for (int j = 0; j < Galaxy.solSystems[curSystem].crafts.Count; j++) //draw all crafts in current system
@@ -271,11 +276,7 @@ namespace Eridanus
                     Editor.spriteBatch.Draw(temp2.type.sprite, temp2.loc, rotation: temp2.orientation, origin: new Vector2(temp2.type.sprite.Width / 2, temp2.type.sprite.Height / 2), scale: temp2.type.scale);
                 }
 
-                if (leftSelected != null)
-                {
-                    //draw outline around selected object
-
-                }
+                
 
             }
             else

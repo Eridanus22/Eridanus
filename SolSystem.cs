@@ -14,7 +14,6 @@ namespace Eridanus.SpaceSystems
         private static uint nextID = 0;
         public uint solID;
         public List<Body> bodies;
-        public int nonAstNum;
         public List<int> crafts;
         public Vector2 loc; //location on galactic map
         public Rectangle box;
@@ -22,7 +21,6 @@ namespace Eridanus.SpaceSystems
         public SolSystem(String n, Vector2 pos)
         {
             name = n;
-            nonAstNum = 0;
             loc = pos;
             bodies = new List<Body>();
             crafts = new List<int>();

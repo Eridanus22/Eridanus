@@ -127,32 +127,25 @@ namespace Eridanus.SpaceSystems
                     theta = Double.Parse(data[7]);
                     yearLength = float.Parse(data[8]);
                     dayLength = float.Parse(data[9]);
-                }catch (Exception) { Console.WriteLine("BAD PARSE"); continue;  }   //bad input
+                }catch (Exception) { continue;  }   //bad input
 
                 if (String.Equals(data[0], "asteroid"))
                 {
-                    //b = new Asteroid(name, imgfile, mass, radius, orbitDist, theta, yearLength, dayLength);
-                    continue;
+                    b = new Asteroid(name, imgfile, mass, radius, orbitDist, theta, yearLength, dayLength);
                 }
                 else if (String.Equals(data[0], "surPlanet"))
                 {
                     b = new SurfacePlanet(name, imgfile, mass, radius, orbitDist, theta, yearLength, dayLength);
-                    b.calcRadians();
                     prevB = b;
-                    s.nonAstNum++;
                 }
                 else if (String.Equals(data[0], "gasPlanet"))
                 {
                     b = new GasPlanet(name, imgfile, mass, radius, orbitDist, theta, yearLength, dayLength);
-                    b.calcRadians();
                     prevB = b;
-                    s.nonAstNum++;
                 }
                 else if (String.Equals(data[0], "moon"))
                 {
                     b = new Moon(name, imgfile, mass, radius, orbitDist, theta, yearLength, dayLength, prevB);
-                    b.calcRadians();
-                    s.nonAstNum++;
                 }
                 else if (String.Equals(data[0], "star"))
                 {

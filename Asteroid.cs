@@ -1,43 +1,61 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
 
 namespace Eridanus.SpaceSystems
 {
-    public class Asteroid : Planet
+    public class Asteroid : SurfacePlanet
     {
-        public ushort yearLength; //in earth days 
-        public ushort dayLength; //in hours (0=tidalLock)
-        //rings?
+        //public double escapeVel; //meters per second
+        //public float habitability;
+        //other enviromental BS, water etc. 
+        //atmosphere
+        //planet surface, resources
 
-        public Asteroid() { }
-
-        public Asteroid(String img, double rad, Vector2 l)
+        public Asteroid(string n, string img, double m, double r, float od, double t, float yrLen, float dayLen)
         {
+            name = n;
             imgfile = img;
-            FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
-            sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
-            fileStream.Dispose();
-            radius = rad;
-            loc = l;
-            theta = 0;
-            orbitDist = ((loc.X * loc.X) + (loc.Y * loc.Y));
-            orbitDist = (float)Math.Sqrt(orbitDist);
+            mass = m;
+            radius = r;
+            orbitDist = od;
+            theta = t;
+            yearLength = yrLen;
+            dayLength = dayLen;
+            this.readSprite();
+            loc = new Vector2(orbitDist, 0);
             base.initialize();
         }
 
         public override void simulateOrbit()
         {
-            //hypotenuse/radius = orbitDist
-            theta = (theta + radians) % (2 * Math.PI);
-            loc.X = (orbitDist * (float)Math.Cos(theta));
-            loc.Y = (orbitDist * (float)Math.Sin(theta));
-            base.simulateOrbit();
+            if (Settings.simAsteroidOrbits) { base.simulateOrbit(); }
+            else { this.getBox(); }
+        }
+
+        public override Rectangle getOrbitBox() { return Rectangle.Empty; }
+
+        public override void readSprite()
+        {
+            try
+            {
+                FileStream fileStream = new FileStream(imgfile, FileMode.Open);
+                sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
+                fileStream.Dispose();
+            }
+            catch (Exception)
+            { //load random asteroid img
+                imgfile = "asteroid.png";
+                FileStream fileStream = new FileStream("Content/sprites/" + imgfile, FileMode.Open);
+                sprite = Texture2D.FromStream(DrawTest.graphicsDevice, fileStream);
+                fileStream.Dispose();
+            }
         }
     }
 }
+

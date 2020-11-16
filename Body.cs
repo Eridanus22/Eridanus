@@ -35,7 +35,7 @@ namespace Eridanus.SpaceSystems
 
         public virtual void simulateOrbit(){ this.getBox();  }
 
-        public virtual Rectangle getOrbitBox() { return new Rectangle(0,0,0,0); }
+        public virtual Rectangle getOrbitBox() { return Rectangle.Empty; }
 
         public virtual void readSprite()
         {
@@ -68,7 +68,7 @@ namespace Eridanus.SpaceSystems
 
         public void getBox()
         {
-            box = new Rectangle((int)(loc.X-(radius/2000)),(int)(loc.Y-(radius/2000)), (int)(radius/1000), (int)(radius / 1000));
+            box = new Rectangle((int)((loc.X-(radius/2000))),(int)(loc.Y-(radius/2000)), (int)(radius/1000), (int)(radius / 1000));
         }
     }
 }

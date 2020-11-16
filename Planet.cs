@@ -28,6 +28,12 @@ namespace Eridanus.SpaceSystems
             base.simulateOrbit();
         }
 
+        public void initialize()
+        {
+            this.calcRadians();
+            base.initialize();
+        }
+
         public override void calcRadians()
         {
             //yrLength is in Earth days

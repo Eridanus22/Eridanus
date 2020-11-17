@@ -14,7 +14,7 @@ namespace Eridanus.SpaceSystems
         private static uint nextID = 0;
         public uint solID;
         public List<Body> bodies;
-        public List<uint> crafts;
+        public List<int> crafts;
         public Vector2 loc; //location on galactic map
         public Rectangle box;
         //nebulas?
@@ -24,7 +24,7 @@ namespace Eridanus.SpaceSystems
             name = n;
             loc = pos;
             bodies = new List<Body>();
-            crafts = new List<uint>();
+            crafts = new List<int>();
             solID = nextID;
             nextID++;
             this.initialize();

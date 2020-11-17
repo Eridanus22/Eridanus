@@ -38,7 +38,7 @@ namespace Eridanus.SpaceSystems
             else { this.getBox(); }
         }
 
-        public override Rectangle getOrbitBox() { return Rectangle.Empty; }
+        public override void drawOrbit(SpriteBatch s, float z) { return; }
 
         public override void readSprite()
         {

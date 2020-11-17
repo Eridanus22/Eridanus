@@ -45,6 +45,6 @@ namespace Eridanus.SpaceSystems
             return parent.loc;
         }
 
-        public override Rectangle getOrbitBox() { return new Rectangle((int)(parent.loc.X-orbitDist), (int)(parent.loc.Y - orbitDist), (int)(2*orbitDist), (int)(2 * orbitDist)); }
+        public virtual void drawOrbit(SpriteBatch s, float z) { Primitives2D.DrawCircle(s, getOrbitCenter(), orbitDist, 360, Color.Cyan, 1f / z); }
     }
 }

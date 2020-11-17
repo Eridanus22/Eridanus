@@ -17,7 +17,7 @@ namespace Eridanus.SpaceSystems
 
         public Planet() { }
 
-        public override Rectangle getOrbitBox() { return new Rectangle((int)-orbitDist, (int)-orbitDist, (int)orbitDist * 2, (int)orbitDist * 2); }
+        public override void drawOrbit(SpriteBatch s, float z) { Primitives2D.DrawCircle(s, getOrbitCenter(), orbitDist, 360, Color.Cyan, 1f / z); }
 
         public override void simulateOrbit()
         {

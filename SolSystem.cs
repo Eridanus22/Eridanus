@@ -14,16 +14,17 @@ namespace Eridanus.SpaceSystems
         private static uint nextID = 0;
         public uint solID;
         public List<Body> bodies;
-        public List<int> crafts;
+        public List<uint> crafts;
         public Vector2 loc; //location on galactic map
         public Rectangle box;
+        //nebulas?
 
         public SolSystem(String n, Vector2 pos)
         {
             name = n;
             loc = pos;
             bodies = new List<Body>();
-            crafts = new List<int>();
+            crafts = new List<uint>();
             solID = nextID;
             nextID++;
             this.initialize();
@@ -36,20 +37,11 @@ namespace Eridanus.SpaceSystems
         public void simulateOrbits()
         {
             //simulate orbits, update positions
-            for (int i = 1; i < bodies.Count; i++)
+            for (int i = 0; i < bodies.Count; i++)
             {
                 bodies[i].simulateOrbit();
             }
         }
 
-        public void createCraft(Craft c, Vector2 l)
-        {
-
-        }
-
-        public void addBody(Body b)
-        {
-            bodies.Add(b);
-        }
     }
 }

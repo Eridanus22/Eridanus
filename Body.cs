@@ -35,7 +35,7 @@ namespace Eridanus.SpaceSystems
 
         public virtual void simulateOrbit(){ this.getBox();  }
 
-        public virtual Rectangle getOrbitBox() { return Rectangle.Empty; }
+        public virtual void drawOrbit(SpriteBatch s, float z) { return; }
 
         public virtual void readSprite()
         {

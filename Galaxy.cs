@@ -25,38 +25,7 @@ namespace Eridanus.SpaceSystems
         public static void load()
         {
             readSystem("Sol.txt");
-    
 
-
-            
-            /*
-            for(int i=0; i< 1000; i++)
-            {
-                Random rand = new Random();
-                int num = rand.Next(379, 478);
-                int n = rand.Next(0, 6283);
-
-                test.bodies.Add(new Body("asteroid.png", new Vector2(.8f, .8f), new Vector2(num * 100, 00)));
-                test.bodies[10 + i].theta = (float)n / 1000;
-                test.bodies[10 + i].radians = (float)2/(num*100);
-            }
-            */
-            /*
-            test.crafts.Add(0);
-            
-            //second system
-            SolSystem test2 = new SolSystem(new Vector2(100000, 100000));
-            test2.bodies.Add(new Body("blueStar.png", 300000, new Vector2(0, 0)));
-            test2.bodies.Add(new Planet("tan.png", 5000, new Vector2(14960, 0)));
-            test2.bodies.Add(new Planet("swamp.png", 6500, new Vector2(22790, 000)));
-            test2.bodies[1].radians = .000049583f * 60;
-            test2.bodies[2].radians = .000019393f * 60;
-            Galaxy.solSystems.Add(test2);
-            Craft testCraft = new Craft(Vector2.Zero, 0, .01f);
-            testCraft.orders = new ArrayOrders();
-            testCraft.orders.enqueue(new MoveTo(new Vector2(100000, 1000)));
-            Galaxy.crafts.Add(testCraft);
-            */
         }
 
 

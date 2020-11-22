@@ -60,7 +60,9 @@ namespace Eridanus.SpaceSystems
         public void destroy()
         {
             //explosion animation on position relative to scale
-            Galaxy.crafts.Remove(this);
+            //remove from curSystem
+            //Galaxy.crafts[this id] = empty;
+            //Galaxy.emptyCrafts.Enqueue(this id);
         }
 
         public Rectangle getBox()

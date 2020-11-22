@@ -70,5 +70,20 @@ namespace Eridanus.SpaceSystems
         {
             box = new Rectangle((int)((loc.X-(radius/2000))),(int)(loc.Y-(radius/2000)), (int)(radius/1000), (int)(radius / 1000));
         }
+
+        //used for random initial location along orbit 
+        public virtual void randLoc()
+        {
+            Random rand = new Random();
+            theta = (rand.NextDouble() + radians) % (2 * Math.PI);
+            loc.X = (orbitDist * (float)Math.Cos(theta));
+            loc.Y = (orbitDist * (float)Math.Sin(theta));
+            this.getBox();  //only need to get box once if orbits are not simulated
+        }
+
+        public virtual void drawBody(SpriteBatch s, float z)
+        {
+            s.Draw(sprite, destinationRectangle: box);
+        }
     }
 }

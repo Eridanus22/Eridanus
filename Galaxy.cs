@@ -12,6 +12,8 @@ namespace Eridanus.SpaceSystems
         public static List<SolSystem> solSystems; //all systems
         public static List<Craft> crafts;  //all crafts
         public static List<int> galacticCraft; //ships on galactic plane
+        public static Queue<int> emptyCrafts;
+        //public static short miningRate, researchRate, constructRate;
         //boundaries
 
         public static void init()
@@ -20,11 +22,15 @@ namespace Eridanus.SpaceSystems
             solSystems = new List<SolSystem>();
             crafts = new List<Craft>();
             galacticCraft = new List<int>();
+            emptyCrafts = new Queue<int>();
         }
 
         public static void load()
         {
             readSystem("Sol.txt");
+            Craft test = new Craft(Vector2.Zero, 0, 10);
+            crafts.Add(test);
+            solSystems[0].crafts.Add(0);
 
         }
 

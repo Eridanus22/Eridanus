@@ -45,6 +45,26 @@ namespace Eridanus.SpaceSystems
             return parent.loc;
         }
 
-        public virtual void drawOrbit(SpriteBatch s, float z) { Primitives2D.DrawCircle(s, getOrbitCenter(), orbitDist, 360, Color.Cyan, 1f / z); }
+        public override void drawOrbit(SpriteBatch s, float z) { 
+            if (z > .02f) { 
+                base.drawOrbit(s, z); 
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public override void drawBody(SpriteBatch s, float z)
+        {
+            if (z > .1f)
+            {
+                base.drawBody(s, z);
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

@@ -47,7 +47,6 @@ C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Ceres.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Earth.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Europa.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Ganymede.png
-C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Io.jpg
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Jupiter.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Luna.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Mars.png
@@ -61,3 +60,5 @@ C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Triton.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Uranus.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Venus.png
 C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol.txt
+C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Eris.png
+C:\Users\m222904\source\repos\Eridanus\bin\x64\Release\Systems\Sol\Io.png

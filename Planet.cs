@@ -39,5 +39,10 @@ namespace Eridanus.SpaceSystems
             //yrLength is in Earth days
             radians = (float)((2 * Math.PI) / (yearLength * 24));
         }
+
+        public override void drawBody(SpriteBatch s, float z)
+        {
+            base.drawBody(s, z);
+        }
     }
 }

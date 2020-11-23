@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EridanusA
+namespace Eridanus
 {
     public partial class Form1 : Form
     {
@@ -32,12 +32,12 @@ namespace EridanusA
             if (GameRun.paused == true)
             {
                 GameRun.paused = false;
-                this.pauseButton.BackgroundImage = global::EridanusA.Properties.Resources.pause;
+                this.pauseButton.BackgroundImage = global::Eridanus.Properties.Resources.pause;
             }
             else
             {
                 GameRun.paused = true;
-                this.pauseButton.BackgroundImage = global::EridanusA.Properties.Resources.forward;
+                this.pauseButton.BackgroundImage = global::Eridanus.Properties.Resources.forward;
             }
         }
 

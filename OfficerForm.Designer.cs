@@ -1,4 +1,4 @@
-﻿namespace EridanusA
+﻿namespace Eridanus
 {
     partial class OfficerForm
     {
@@ -564,7 +564,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::EridanusA.Properties.Resources.Race230;
+            this.pictureBox1.BackgroundImage = global::Eridanus.Properties.Resources.Race230;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(754, 25);
             this.pictureBox1.Name = "pictureBox1";

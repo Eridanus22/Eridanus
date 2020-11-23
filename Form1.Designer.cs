@@ -1,4 +1,4 @@
-﻿namespace EridanusA
+﻿namespace Eridanus
 {
     partial class Form1
     {
@@ -94,7 +94,7 @@
             // 
             // pauseButton
             // 
-            this.pauseButton.BackgroundImage = global::EridanusA.Properties.Resources.pause;
+            this.pauseButton.BackgroundImage = global::Eridanus.Properties.Resources.pause;
             this.pauseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pauseButton.Location = new System.Drawing.Point(401, 0);
             this.pauseButton.Name = "pauseButton";
@@ -141,7 +141,7 @@
             // 
             // milButton
             // 
-            this.milButton.BackgroundImage = global::EridanusA.Properties.Resources.Commanders;
+            this.milButton.BackgroundImage = global::Eridanus.Properties.Resources.Commanders;
             this.milButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.milButton.Location = new System.Drawing.Point(247, 2);
             this.milButton.Name = "milButton";
@@ -152,7 +152,7 @@
             // 
             // button4
             // 
-            this.button4.BackgroundImage = global::EridanusA.Properties.Resources.colony_Tab;
+            this.button4.BackgroundImage = global::Eridanus.Properties.Resources.colony_Tab;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Location = new System.Drawing.Point(186, 2);
             this.button4.Name = "button4";
@@ -162,7 +162,7 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = global::EridanusA.Properties.Resources.research_alt;
+            this.button3.BackgroundImage = global::Eridanus.Properties.Resources.research_alt;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Location = new System.Drawing.Point(125, 2);
             this.button3.Name = "button3";
@@ -172,7 +172,7 @@
             // 
             // button2
             // 
-            this.button2.BackgroundImage = global::EridanusA.Properties.Resources.Sector_View;
+            this.button2.BackgroundImage = global::Eridanus.Properties.Resources.Sector_View;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Location = new System.Drawing.Point(3, 2);
             this.button2.Name = "button2";
@@ -182,7 +182,7 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::EridanusA.Properties.Resources.Race_Window;
+            this.button1.BackgroundImage = global::Eridanus.Properties.Resources.Race_Window;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Location = new System.Drawing.Point(64, 2);
             this.button1.Name = "button1";

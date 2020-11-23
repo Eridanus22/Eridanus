@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{42A1C2E9-B2A4-4247-8E62-8F4829276052}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EridanusA</RootNamespace>
-    <AssemblyName>EridanusA</AssemblyName>
+    <RootNamespace>Eridanus</RootNamespace>
+    <AssemblyName>Eridanus</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

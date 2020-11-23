@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using Eridanus.SpaceSystems;
 using Microsoft.Xna.Framework.Input;
-using EridanusA;
+using Eridanus;
 using System;
 
 namespace Eridanus

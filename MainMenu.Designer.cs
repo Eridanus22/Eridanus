@@ -1,4 +1,4 @@
-﻿namespace EridanusA
+﻿namespace Eridanus
 {
     partial class MainMenu
     {
@@ -111,7 +111,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::EridanusA.Properties.Resources.eridTitle;
+            this.pictureBox1.BackgroundImage = global::Eridanus.Properties.Resources.eridTitle;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Location = new System.Drawing.Point(33, 0);
             this.pictureBox1.Name = "pictureBox1";

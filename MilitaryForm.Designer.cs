@@ -1,4 +1,4 @@
-﻿namespace EridanusA
+﻿namespace Eridanus
 {
     partial class MilitaryForm
     {

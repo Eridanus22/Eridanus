@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EridanusA
+namespace Eridanus
 {
     public static class GameWait
     {

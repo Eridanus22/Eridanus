@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using Microsoft.Xna.Framework;
-using EridanusA;
 
 namespace Eridanus
 {

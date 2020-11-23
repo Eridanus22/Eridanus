@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EridanusA
+namespace Eridanus
 {
     public partial class FleetOrders : Form
     {

@@ -610,7 +610,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1670, 1024);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(1670, 1028);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button3);

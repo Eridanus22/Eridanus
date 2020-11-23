@@ -16,6 +16,7 @@ namespace Eridanus.SpaceSystems
         public ShipClass type;
         public uint empireID;
         public int curSystem;
+        public int index;
         //cargo onboard
         //fuel
         //crew, command

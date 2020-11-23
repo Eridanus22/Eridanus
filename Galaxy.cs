@@ -18,7 +18,6 @@ namespace Eridanus.SpaceSystems
 
         public static void init()
         {
-            name = "null";
             solSystems = new List<SolSystem>();
             crafts = new List<Craft>();
             galacticCraft = new List<int>();
@@ -27,6 +26,7 @@ namespace Eridanus.SpaceSystems
 
         public static void load()
         {
+            name = "Milky Way";
             readSystem("Sol.txt");
             Craft test = new Craft(Vector2.Zero, 0, 10);
             crafts.Add(test);

@@ -25,14 +25,15 @@ namespace Eridanus
             text.Add("Survey");
             text.Add("Load Cargo");
             text.Add("Unload Cargo");
+            hitbox = new Rectangle((int)loc.X, (int)loc.Y, width + 10, (height * (text.Count + 5) + 5));
         }
 
         public void draw(SpriteBatch s)
         {
             Primitives2D.FillRectangle(s, hitbox, color);
             s.DrawString(default, "Orders", position: new Vector2((int)hitbox.X, (int)hitbox.Y), ordColor);
-            float x = hitbox.X;
-            float y = hitbox.Y;
+            float x = hitbox.X+5;
+            float y = hitbox.Y+5;
 
             for (int i = 0; i < text.Count; i++)
             {

@@ -90,6 +90,7 @@
     <Compile Include="BaseObj.cs" />
     <Compile Include="Body.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="ClickMenu.cs" />
     <Compile Include="Colony.cs" />
     <Compile Include="ColonyView.cs">
       <SubType>Form</SubType>

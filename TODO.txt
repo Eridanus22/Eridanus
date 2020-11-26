@@ -7,7 +7,6 @@ compute image scale based on mass, size
 Ship components
 
 database saving/loading
-load sol systems via XML or similar
 
 shipyards
 
@@ -18,6 +17,9 @@ races/factions/empires
 Planet surfaces, production
 
 Officers, training
+
+tech tree and Research
+
 Ground warfare
 
 Governments

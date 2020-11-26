@@ -13,7 +13,7 @@ namespace Eridanus.SpaceSystems
     {
         public float yearLength; //in earth days 
         public float dayLength; //in hours (0=tidalLock || day==year)
-        //rings?
+        //rings, array of circle primitives?
 
         public Planet() { }
 

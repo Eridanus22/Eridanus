@@ -68,7 +68,16 @@ namespace Eridanus.SpaceSystems
 
         public void getBox()
         {
-            box = new Rectangle((int)((loc.X-(radius/2000))),(int)(loc.Y-(radius/2000)), (int)(radius/1000), (int)(radius / 1000));
+            //int len = 
+            /*
+             
+            if(zoom>8){ 
+            len = radius*2; 
+                if(len<100){ len=100; }
+            }
+
+             */
+            box = new Rectangle((int)((loc.X-(100))),(int)(loc.Y-(100)), (int)(200), (int)(200));
         }
 
         //used for random initial location along orbit 

@@ -14,7 +14,7 @@ namespace Eridanus.SpaceSystems
         public static List<int> galacticCraft; //ships on galactic plane
         public static Queue<int> emptyCrafts;
         //public static short miningRate, researchRate, constructRate;
-        //boundaries
+        public static Vector2 bounds;   //bounds of galactic map
 
         public static void init()
         {
@@ -53,9 +53,6 @@ namespace Eridanus.SpaceSystems
                 crafts[i].update();
             }
 
-            //combat
-
-            //complete orders
 
         }
 
@@ -103,6 +100,8 @@ namespace Eridanus.SpaceSystems
                     yearLength = float.Parse(data[8]);
                     dayLength = float.Parse(data[9]);
                 }catch (Exception) { continue;  }   //bad input
+
+                //check for * to make random
 
                 if (String.Equals(data[0], "asteroid"))
                 {

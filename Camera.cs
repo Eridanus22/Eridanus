@@ -99,6 +99,11 @@ namespace Eridanus
             return Vector2.Transform(point, invertedMatrix);
         }
 
+        public Vector2 PointToScreen(Vector2 point)
+        {
+            return Vector2.Transform(point, this.Transform);
+        }
+
         public int closestSys()
         {
             int sysID = 0;

@@ -153,6 +153,7 @@ namespace Eridanus
                         if (temp2.getBox().Contains(point))
                         {
                             rightSelected = temp2;
+                            orderMenu = new ClickMenu(leftSelected);
                             objSelected = true;
                             break;
                         }
@@ -166,6 +167,7 @@ namespace Eridanus
                             if (temp.box.Contains(point))   //mouse click is within sprite
                             {
                                 rightSelected = temp;
+                                orderMenu = new ClickMenu(leftSelected);
                                 objSelected = true;
                                 break;
                             }
@@ -308,10 +310,10 @@ namespace Eridanus
             Editor.spriteBatch.End();
             Editor.spriteBatch.Begin(); //no need for translation
 
-            if (rightSelected != null && leftSelected != null)
+            if (rightSelected != null && leftSelected != null && orderMenu != null)
             {
     
-                orderMenu.draw(Editor.spriteBatch); //orders menu, i.e. "Move to"
+                orderMenu.draw(Editor.spriteBatch, camera); //orders menu, i.e. "Move to"
 
             }
             if (leftSelected != null)

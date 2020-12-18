@@ -27,6 +27,7 @@ namespace Eridanus
 
         //UI
         BaseObj leftSelected, rightSelected;
+        ClickMenu orderMenu;
 
         protected override void Initialize()
         {
@@ -41,6 +42,7 @@ namespace Eridanus
             Galaxy.load();
             leftSelected = null;
             rightSelected = null;
+            orderMenu = null;
             Thread g = new Thread(GameRun.run);
             g.Start();
         }
@@ -84,6 +86,11 @@ namespace Eridanus
                         Craft temp2;
                         Boolean objSelected = false;
 
+                        if (orderMenu != null)
+                        {
+                            orderMenu.checkClick(click);    //uses screen coords
+                        }
+
                         //check current system
                         for (int j = 0; j < Galaxy.solSystems[curSystem].crafts.Count; j++) //check all crafts in current system
                         {
@@ -113,6 +120,7 @@ namespace Eridanus
                         {
                             leftSelected = null;
                             rightSelected = null;
+                            orderMenu = null; 
                         }
 
                     }
@@ -297,20 +305,20 @@ namespace Eridanus
                 */
 
             }
+            Editor.spriteBatch.End();
+            Editor.spriteBatch.Begin(); //no need for translation
 
-            
-            if (rightSelected != null)
+            if (rightSelected != null && leftSelected != null)
             {
-                if (leftSelected != null)
-                {
-                    //draw orders menu
-                    //rightSelected.loc
-                }
-                else
-                {
-                    //draw selected info/options menu
-                    //Editor.spriteBatch.Draw(rightSelected.menu(), rightSelected.box());
-                }
+    
+                orderMenu.draw(Editor.spriteBatch); //orders menu, i.e. "Move to"
+
+            }
+            if (leftSelected != null)
+            {
+                //draw selected info/options menu
+                //Editor.spriteBatch.Draw(rightSelected.menu(), rightSelected.box());
+
             }
 
             Editor.spriteBatch.End();

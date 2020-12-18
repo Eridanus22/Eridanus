@@ -25,13 +25,13 @@ namespace Eridanus
             text.Add("Survey");
             text.Add("Load Cargo");
             text.Add("Unload Cargo");
-            hitbox = new Rectangle((int)obj.loc.X, (int)obj.loc.Y, width + 10, ((height * (text.Count+1)) + 10));
+            hitbox = new Rectangle((int)obj.loc.X, (int)obj.loc.Y, width + 10, ((height + 5) * (text.Count+1)));
         }
 
         public void draw(SpriteBatch s, Camera c)
         {
             Vector2 loc = c.PointToScreen(obj.loc);
-            hitbox = new Rectangle((int)loc.X, (int)loc.Y, width + 10, ((height * (text.Count+1)) + 10));
+            hitbox = new Rectangle((int)loc.X, (int)loc.Y, width + 10, ((height+5) * (text.Count+1)));
             Primitives2D.FillRectangle(s, hitbox, color);
             //s.DrawString(default, "Orders", position: new Vector2((int)hitbox.X, (int)hitbox.Y), ordColor);
             float x = hitbox.X+5;
@@ -41,8 +41,6 @@ namespace Eridanus
 
            
                 Primitives2D.FillRectangle(s, new Rectangle((int)x, (int)y, width, height), boxColor);
-
-            
 
                 //s.DrawString(default, text[i], position: new Vector2((int)x,(int)y), Color.White);
                 y += height + 5;

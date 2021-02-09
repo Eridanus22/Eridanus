@@ -49,7 +49,21 @@ namespace Eridanus
 
         public Boolean checkClick(Vector2 click)
         {
+            float x = hitbox.X + 5;
+            float y = hitbox.Y;
+            Rectangle box;
 
+            for (int i = 0; i < text.Count; i++) { 
+                y += height + 5;
+                box =new Rectangle((int)x, (int)y, width, height);
+
+                if (box.Contains(click))
+                {
+                    //do order
+                    return true;
+                }
+                
+            }
             return false;
         }
     }

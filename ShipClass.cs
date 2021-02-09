@@ -18,9 +18,11 @@ namespace Eridanus
         public Vector2 scale;
         public Boolean military;
         public uint empireID;
-        //list of components
+        public List<uint> shipsOfClass;
+        //public //list of components
         //fuel capacity
         //cargo capacity
+        //public Bridge component
         //ship billets
         //engine metrics
         //turn rate (check if engine is damaged)
@@ -32,10 +34,10 @@ namespace Eridanus
             this.calcScale();
         }
 
-        public void constructShip()
+        public void constructShip(uint key)
         {
+            shipsOfClass.Add(key);
             numBuilt++;
-
         }
   
         public void calcScale() {

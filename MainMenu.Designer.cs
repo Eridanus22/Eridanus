@@ -48,9 +48,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Space Age", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(178, 403);
+            this.button1.Location = new System.Drawing.Point(119, 262);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(324, 60);
+            this.button1.Size = new System.Drawing.Size(224, 39);
             this.button1.TabIndex = 17;
             this.button1.Text = "Multiplayer";
             this.button1.UseVisualStyleBackColor = false;
@@ -65,9 +66,10 @@
             this.loadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadButton.Font = new System.Drawing.Font("Space Age", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadButton.ForeColor = System.Drawing.Color.White;
-            this.loadButton.Location = new System.Drawing.Point(178, 324);
+            this.loadButton.Location = new System.Drawing.Point(119, 211);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(324, 60);
+            this.loadButton.Size = new System.Drawing.Size(224, 39);
             this.loadButton.TabIndex = 16;
             this.loadButton.Text = "Load Game";
             this.loadButton.UseVisualStyleBackColor = false;
@@ -82,9 +84,10 @@
             this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.optionsButton.Font = new System.Drawing.Font("Space Age", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionsButton.ForeColor = System.Drawing.Color.White;
-            this.optionsButton.Location = new System.Drawing.Point(178, 483);
+            this.optionsButton.Location = new System.Drawing.Point(119, 314);
+            this.optionsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.optionsButton.Name = "optionsButton";
-            this.optionsButton.Size = new System.Drawing.Size(324, 60);
+            this.optionsButton.Size = new System.Drawing.Size(224, 39);
             this.optionsButton.TabIndex = 15;
             this.optionsButton.Text = "Options";
             this.optionsButton.UseVisualStyleBackColor = false;
@@ -99,9 +102,10 @@
             this.newGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newGameButton.Font = new System.Drawing.Font("Space Age", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newGameButton.ForeColor = System.Drawing.Color.White;
-            this.newGameButton.Location = new System.Drawing.Point(178, 246);
+            this.newGameButton.Location = new System.Drawing.Point(119, 160);
+            this.newGameButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.newGameButton.Name = "newGameButton";
-            this.newGameButton.Size = new System.Drawing.Size(324, 60);
+            this.newGameButton.Size = new System.Drawing.Size(224, 39);
             this.newGameButton.TabIndex = 14;
             this.newGameButton.Text = "New Game";
             this.newGameButton.UseVisualStyleBackColor = false;
@@ -113,9 +117,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Eridanus.Properties.Resources.eridTitle;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(22, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(622, 240);
+            this.pictureBox1.Size = new System.Drawing.Size(415, 156);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
@@ -129,20 +134,21 @@
             this.quitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.quitButton.Font = new System.Drawing.Font("Space Age", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitButton.ForeColor = System.Drawing.Color.White;
-            this.quitButton.Location = new System.Drawing.Point(178, 560);
+            this.quitButton.Location = new System.Drawing.Point(119, 364);
+            this.quitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(324, 60);
+            this.quitButton.Size = new System.Drawing.Size(224, 39);
             this.quitButton.TabIndex = 18;
             this.quitButton.Text = "Quit";
             this.quitButton.UseVisualStyleBackColor = false;
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(678, 644);
+            this.ClientSize = new System.Drawing.Size(456, 430);
             this.Controls.Add(this.quitButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.loadButton);
@@ -152,8 +158,9 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1920, 1200);
-            this.MinimumSize = new System.Drawing.Size(700, 700);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1285, 794);
+            this.MinimumSize = new System.Drawing.Size(472, 469);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

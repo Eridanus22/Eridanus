@@ -71,6 +71,11 @@ namespace Eridanus.SpaceSystems
 
             return new Rectangle((int)(loc.X - 100), (int)(loc.Y- 100), (int)200, (int)200);
         }
+        
+        public void setVelocity(float v)
+        {
+            //calculates engine power needed to maintain velocity based on mass
+        }
 
     }
 }
